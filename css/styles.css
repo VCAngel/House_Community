@@ -1,4 +1,42 @@
-h1 {
-    color: cadetblue;
-        font-size: 95px;
+body{
+    font-family: 'Roboto Slab', serif; /*TOMAR EN CUENTA GOOGLE FONTS*/
+}
+
+/** GLOBALES **/
+.contenedor{
+    max-width: 1200px;
+    margin: 0 auto 0 auto; /*up, right, down, left*/
+}
+
+/*Header */
+.BR-header.inicio{ 
+    background-image: url(../img/header.jpg);
+    background-position: center center;
+    background-size: cover;
+    height: 100vh; /*view * height, sirve para tomar el tamaño de la pantalla*/
+    min-height: 600px; /*el tamaño mínimo de la imagen*/
+}
+
+.barra{
+    display: flex;
+    justify-content: space-between; /*acomoda de manera horizontal*/
+    align-items: center; /*acomoda de manera vertical los elementos*/
+    padding: 30px 0 0 0;
+}
+
+/* Navegacion */
+.navegacion a{ /*.clase etiqueta{} /* accedes a la etiqueta dentro de una clase especifica*/
+    color: #dadada;
+    text-decoration: none;
+    font-size: 20px;
+    margin-right: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.navegacion a:hover{
+    color: #00b080;
+}
+
+.navegacion a:last-of-type{ /*El ultimo hermano de la jerarquia*/
+    margin-right: 0;
 }
