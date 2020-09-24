@@ -1,12 +1,41 @@
+html{
+    font-size: 62.5%; /*!!! Reset para REMS =>> 62.5% de 16px= 10px* !!!*/
+}
+
 body{
     font-family: 'Roboto Slab', serif; /*TOMAR EN CUENTA GOOGLE FONTS*/
+    font-size: 1.6rem;
+    line-height: 2;
 }
+
+h1 {font-size: 3.8rem;}
+
+h2 {font-size: 3.4rem;}
+
+h3 {font-size: 3rem;}
+
+h4 {font-size: 2.6rem;}
 
 /** GLOBALES **/
 .contenedor{
-    max-width: 1200px;
+    max-width: 120rem; /* 1200px*/
     margin: 0 auto 0 auto; /*up, right, down, left*/
 }
+
+/* UTILIDADES */
+.seccion{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.fw-300{
+    font-weight: 300;
+}
+
+.center-txt{
+    text-align: center;
+}
+/*****************************************/
 
 /*Header */
 .BR-header.inicio{ 
@@ -14,22 +43,36 @@ body{
     background-position: center center;
     background-size: cover;
     height: 100vh; /*view * height, sirve para tomar el tamaño de la pantalla*/
-    min-height: 600px; /*el tamaño mínimo de la imagen*/
+    min-height: 60rem; /*el tamaño mínimo de la imagen*/
+}
+
+.contenido-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.contenido-header h1{
+    color: white;
+    padding-bottom: 2rem;
+    max-width: 60rem;
+    line-height: 2;
 }
 
 .barra{
     display: flex;
     justify-content: space-between; /*acomoda de manera horizontal*/
     align-items: center; /*acomoda de manera vertical los elementos*/
-    padding: 30px 0 0 0;
+    padding: 3rem 0 0 0;
 }
 
 /* Navegacion */
 .navegacion a{ /*.clase etiqueta{} /* accedes a la etiqueta dentro de una clase especifica*/
     color: #dadada;
     text-decoration: none;
-    font-size: 20px;
-    margin-right: 20px;
+    font-size: 2rem; /*Igual a 20px (1rem = 10px)*/
+    margin-right: 2rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
@@ -40,3 +83,20 @@ body{
 .navegacion a:last-of-type{ /*El ultimo hermano de la jerarquia*/
     margin-right: 0;
 }
+
+/* Iconos-Nosotros*/
+
+.iconos-nosotros{
+    display: flex;
+    justify-content: space-between;
+}
+
+.icono{
+    flex-basis: calc(33.3% - 1rem); /* El ancho por default, calc() realiza una ecuacion matematica*/
+    text-align: center;
+}
+
+.icono h3{
+    text-transform: uppercase;
+}
+
