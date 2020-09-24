@@ -1,11 +1,20 @@
 html{
     font-size: 62.5%; /*!!! Reset para REMS =>> 62.5% de 16px= 10px* !!!*/
+    box-sizing: border-box;
+}
+
+*, *::before, *::after{ /*Debería funcionar para que el margin no se tome en cuenta con el Widht de un elemnto*/
+        box-sizing: inherit; /*Pero no jala unu*/
 }
 
 body{
     font-family: 'Roboto Slab', serif; /*TOMAR EN CUENTA GOOGLE FONTS*/
     font-size: 1.6rem;
     line-height: 2;
+}
+
+img{
+    max-width: 100%; /* 100% recomendable, hace que las imagenes sean responsivas a su contenedor*/
 }
 
 h1 {font-size: 3.8rem;}
@@ -35,7 +44,34 @@ h4 {font-size: 2.6rem;}
 .center-txt{
     text-align: center;
 }
+
+.d-block{
+    display: block!important;
+}
 /*****************************************/
+
+/* Botones*/
+.boton{
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.8rem;
+    padding: 1rem 3rem;
+    margin-top: 2rem;
+    border-radius: 0.5rem;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-amarillo{
+    background-color: rgb(223, 145, 0);
+}
+
+.btn-verde{
+    background-color: rgb(100, 206, 0);
+}
+
 
 /*Header */
 .BR-header.inicio{ 
@@ -84,7 +120,7 @@ h4 {font-size: 2.6rem;}
     margin-right: 0;
 }
 
-/* Iconos-Nosotros*/
+/* Iconos Nosotros*/
 
 .iconos-nosotros{
     display: flex;
@@ -100,3 +136,122 @@ h4 {font-size: 2.6rem;}
     text-transform: uppercase;
 }
 
+/*Anuncios*/
+.contenedor-anuncios{
+    display: flex;
+    justify-content: space-between;
+}
+
+.anuncio {
+    flex-basis: calc(33.3% - 1rem);
+    border: 1px solid #00d69d31;
+    background: #f5f5f5;
+}
+
+.contenido-anuncio{
+    padding: 2rem;
+}
+
+.contenido-anuncio h3, p{ /* La coma permite seleccionar dos etiquetas, primero una, luego la otra*/
+    margin: 0;
+}
+
+.precio{
+    color: rgb(100, 206, 0);
+    font-weight: 700;
+}
+
+.iconos-carac{
+    list-style: none;
+    display: flex;
+    padding: 0;
+    justify-content: space-evenly;
+}
+
+.iconos-carac li{
+    /*flex: 1;*/
+    display: flex;
+}
+
+.iconos-carac li > img{
+    margin-right: 2rem;
+}
+
+.ver-todas{
+    display: flex;
+    justify-content: flex-end;
+}
+
+/*Contacto home*/
+.imagen-contacto{
+    background-image: url(../img/encuentra.jpg);
+    height: 40rem;
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+
+.contenido-contacto{
+    flex: 1;
+    color: white;
+}
+
+.contenido-contacto p{
+    font-size: 2rem;
+}
+
+/*Seccion Inferior*/
+.seccion-inferior{
+    display: flex;
+    justify-content: space-between;
+}
+
+.seccion-inferior .blog{
+    flex-basis: 60%;
+}
+
+.seccion-inferior .testimoniales{
+    flex-basis: calc(40% - 2rem);
+}
+
+.entrada-blog{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.entrada-blog:last-of-type{
+    margin-bottom: 0;
+}
+
+.entrada-blog .imagen{
+    flex-basis: 40%;
+}
+
+.entrada-blog .txt-entrada{
+    flex-basis: calc(60% - 3rem);
+}
+
+.txt-entrada h4{
+    margin: 0;
+    line-height: 1.5;
+}
+
+.txt-entrada a{
+    color: black;
+    text-decoration: none;
+}
+
+.txt-entrada h4::after{
+    content: '';
+    display: block;
+    width: 15rem;
+    height: .5rem;
+    background-color: rgb(100, 206, 0);
+    margin-top: 1rem;
+}
+
+.txt-entrada span{
+    color: rgb(223, 145, 0);
+}
