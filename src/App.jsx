@@ -1,5 +1,6 @@
 import React from "react";
-import Header from 'components/header/Header'
+import { Routes, Route } from "react-router-dom";
+import Header from 'components/header/Header';
 import './styles/normalize.css';
 import './styles/app.css';
 
@@ -10,6 +11,10 @@ export default function App({ callback }) {
     return (
         <div>
             <Header logged={logged} />
+
+            <Routes>
+                <Route path="/" element={<h1>ola</h1>}/>
+            </Routes>
         </div>
     )
 }
