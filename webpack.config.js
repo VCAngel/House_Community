@@ -2,7 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-    entry: "./src/App.jsx",
+    entry: "./src/index.js",
     output: {
         filename: "bundle.[fullhash].js",
         path: path.resolve(__dirname, "public"),
