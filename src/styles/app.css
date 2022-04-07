@@ -5,9 +5,7 @@ html {
 }
 
 *, *::before, *::after {
-    /*Debería funcionar para que el margin no se tome en cuenta con el Widht de un elemnto*/
     box-sizing: inherit;
-    /* ! Pero no jala unu*/
 }
 
 body {
@@ -73,7 +71,7 @@ p {
 }
 
 .d-block {
-    display: block!important;
+    display: block !important;
 }
 
 .contenido-centrado {
@@ -98,7 +96,7 @@ p {
     border: none;
 }
 
-.boton:hover{
+.boton:hover {
     cursor: pointer;
 }
 
@@ -112,19 +110,9 @@ p {
 
 /*Header */
 
-.BR-header {
+.HC-header {
     background-color: #333333;
     padding: 1rem 0 3rem 0;
-}
-
-.BR-header.inicio {
-    background-image: url(../img/header.jpg);
-    background-position: center center;
-    background-size: cover;
-    height: 100vh;
-    /*view * height, sirve para tomar el tamaño de la pantalla*/
-    min-height: 60rem;
-    /*el tamaño mínimo de la imagen*/
 }
 
 .contenido-header {
@@ -412,8 +400,8 @@ input:not([type="submit"]), textarea, select {
     border-radius: .5rem;
 }
 
-input[type="radio"]{
-    width:auto;
+input[type="radio"] {
+    width: auto;
     margin: 0;
 }
 
@@ -424,6 +412,6 @@ select {
 .forma-contacto {
     max-width: 30rem;
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
 }
