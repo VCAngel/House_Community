@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../../styles/login.css'
 
 export default class Login extends Component {
     constructor(props) {
@@ -18,12 +19,14 @@ export default class Login extends Component {
                     <h1>House's Community</h1>
                 </div>
                 <div className="login__card">
-                    <form action="form">
-                        <input type="text" className="form__input" />
-                        <input type="text" className="form__input" />
+                    <form className="form">
+                        <label htmlFor="username">Correo Electrónico</label>
+                        <input type="email" id="username" className="form__input" />
+                        <label htmlFor="password">Contraseña</label>
+                        <input type="password" id="password" className="form__input" />
                         <button className="form__button">Iniciar Sesión</button>
                         <p className="form__msg">¿No tienes cuenta?
-                            <a href="#">Contáctanos</a>
+                            <a href="#"> Contáctanos</a>
                         </p>
                     </form>
                 </div>

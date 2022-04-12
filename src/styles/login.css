@@ -1,0 +1,80 @@
+.login {
+    height: 100vh;
+    margin: 5rem auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    background-size: cover;
+}
+
+body {
+    background-image: url('../img/header.jpg');
+}
+
+.login__title {
+    margin: auto auto;
+}
+
+.login__title>h1 {}
+
+.login__card {
+    position: relative;
+    z-index: 1;
+    background-color: #fff;
+    width: 50rem;
+    max-width: 40rem;
+    margin: auto auto;
+    padding: 4.5rem;
+    text-align: left;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2), 0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.24);
+}
+
+.form label {
+    font-size: 1.2rem;
+}
+
+.form__input {
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 1.5rem;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    font-size: 1.4rem;
+}
+
+.form__button {
+    text-transform: uppercase;
+    outline: 0;
+    /*Use proper green color*/
+    background: #4caf50;
+    width: 100%;
+    border: 0;
+    padding: 1.5rem;
+    color: #fff;
+    font-size: 1.4rem;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.form__button:hover,
+.form__button:active,
+.form__button:focus {
+    /* Use proper green color */
+    background: gray;
+}
+
+.form__msg {
+    text-align: center;
+    margin: 1.5rem 0 0;
+    color: #b3b3b3;
+    font-size: 1.2rem;
+}
+
+.form__msg>a {
+    /* User proper green color */
+    color: green;
+    text-decoration: none;
+}
