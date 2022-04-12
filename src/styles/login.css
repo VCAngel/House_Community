@@ -1,21 +1,23 @@
 .login {
     height: 100vh;
-    margin: 5rem auto;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
-    background-size: cover;
-}
-
-body {
     background-image: url('../img/header.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
 .login__title {
     margin: auto auto;
 }
 
-.login__title>h1 {}
+.login__title>h1 {
+    color: white;
+    font-size: 5rem;
+}
 
 .login__card {
     position: relative;
