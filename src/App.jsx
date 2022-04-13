@@ -12,7 +12,7 @@ export default function App({ callback }) {
 
     return (
         <div>
-            <Header />
+            <Header logged={logged} setLogged={setLogged}/>
 
             <Routes>
                 {signIn(logged, setLogged)}
