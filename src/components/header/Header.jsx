@@ -1,30 +1,19 @@
 import React, { Component } from "react";
-import { Link } from 'react-router-dom';
+import { Outlet, Link } from 'react-router-dom';
 
 export default class Header extends Component {
     constructor(props) {
         super(props);
-        this.links = []
-    }
-
-    customPages(logged) {
-        logged ?
-            this.links = [
-                'Anuncios',
-                'Pagos',
-                'Directorio',
-                'Contacto'
-            ]
-            : this.links = ['Contacto']
     }
 
     render() {
-        this.customPages(this.props.logged);
+        if(this.props.links.includes("/"))
+            this.props.links.shift()
 
         return (
             <header className="HC-header">
                 <div className="contenedor contenido-header">
-                    <Navbar links={this.links} />
+                    <Navbar links={this.props.links} />
                 </div>
             </header>
         )
@@ -41,6 +30,7 @@ function Navbar({ links }) {
 
             <nav className="navegacion">
                 {links.map((link, index) => <Navlink page={link} key={index} />)}
+                <Outlet />
             </nav>
         </div>
     );
@@ -48,6 +38,7 @@ function Navbar({ links }) {
 
 const Navlink = ({ page }) => {
     // TODO Figure out react router
+
     let url = `/${page.toLowerCase()}`
     return (
         <Link to={url}>{page}</Link>
