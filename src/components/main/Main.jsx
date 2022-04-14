@@ -7,10 +7,13 @@ import Contacto from '../main/Contacto';
 
 export default function Main({ view, logged, setLogged, links }) {
     return (
-        <main>
+        <div>
             <Header logged={logged} setLogged={setLogged} links={links} />
-            {renderView(view)}
-        </main>
+
+            <main>
+                {renderView(view)}
+            </main>
+        </div>
     )
 }
 
