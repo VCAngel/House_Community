@@ -7,10 +7,21 @@ import {
   VStack,
   Code,
   Grid,
-  theme,
+  extendTheme,
 } from '@chakra-ui/react';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
 import { Logo } from './Logo';
+
+const base = {
+  brand: {
+    900: '#1a365d',
+    800: '#153e75',
+    700: '#2a69ac',
+  }
+}
+
+//! Webpage theme
+const theme = extendTheme({base}) 
 
 function App() {
   return (
