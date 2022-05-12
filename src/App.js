@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import {
   ChakraProvider,
   extendTheme,
@@ -6,7 +7,6 @@ import {
 import Login from './components/Login';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
 import { Logo } from './Logo';
-import bgImage from './img/header.jpg';
 
 const colors = {
   brand: {
@@ -16,26 +16,42 @@ const colors = {
   }
 }
 
-//TODO Figure out login and routing stuff
-
 //! Webpage theme
 const theme = extendTheme({ colors })
 
-function App() {
+export default function App() {
+  //TODO figure out DB connection and stuff
+  const [logged, setLogged] = useState(false);
+  let routes = ['/'];
+
+  logged ?
+    routes.push('Anuncios', 'Pagos', 'Directorio', 'Contacto')
+    : routes.push('Contacto');
+
+  let routeComponents = routes.map((route, key) => {
+    if (!logged) {
+      return <Route path={route.toLowerCase()}
+        element={<Login logged={logged} setLogged={setLogged} links={routes} />}
+        key={key} />
+    }
+  })
+
   return (
     <ChakraProvider theme={theme}>
       {/* TODO Create routes for each link */}
-      <Login />
+      <Login routes={routes}/>
     </ChakraProvider>
   );
 }
 
 //* Main component
 //-> Used for routing to the other views
-function Main() {
+function MainRouting() {
   // TODO Workout routing in main
   //? no styles in here, just routing
+  return (
+    <main>
 
+    </main>
+  );
 }
-
-export default App;
