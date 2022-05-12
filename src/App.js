@@ -6,6 +6,7 @@ import {
 } from '@chakra-ui/react';
 import Login from './components/Login';
 import Navbar from './components/Navbar';
+import NotFound from './components/NotFound';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
 import { Logo } from './Logo';
 
@@ -22,7 +23,7 @@ const theme = extendTheme({ colors })
 
 export default function App() {
   //TODO figure out DB connection and stuff
-  const [logged, setLogged] = useState(false); //!
+  const [logged, setLogged] = useState(!false); //!
   let routes = ['/'];
 
   logged ?
@@ -45,6 +46,7 @@ export default function App() {
       {/* TODO Create routes for each link */}
       <Routes>
         {routeComponents}
+        <Route path="*" element={<NotFound/>}/> 
       </Routes>
     </ChakraProvider>
   );
@@ -55,12 +57,11 @@ export default function App() {
 function MainRouting({ view, logged, setLogged, routes }) {
   const createView = (viewType) => {
     switch (viewType) {
-      case "/": return null
       case "anuncios": return null
       case "pagos": return null
       case "directorio": return null
       case "contacto": return null
-      default: return <h1>La ruta no existe :c</h1>
+      default: return null
     }
   }
   const component = createView(view);

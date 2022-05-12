@@ -7,14 +7,14 @@ import {
     ListItem,
 } from '@chakra-ui/react';
 
-export default function Navbar({ links }) {
+export default function Navbar({ logged, setLogged, links }) {
     if (links.includes("/"))
         links.shift();
 
     return (
         <header>
             <Box mt="1.2rem" mb="1.2rem" display="flex" alignItems="center" justifyContent="space-around">
-                <Link as={RouteLink} to="#">House's Community</Link>
+                <Link as={RouteLink} to="/anuncios">House's Community</Link>
 
                 <List display="flex" alignItems="center" justifyContent="space-between" gap="1rem">
                     {links.map((link, key) => <Navlink page={link} key={key} />)}
