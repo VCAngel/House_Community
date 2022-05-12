@@ -5,6 +5,7 @@ import {
   extendTheme,
 } from '@chakra-ui/react';
 import Login from './components/Login';
+import Navbar from './components/Navbar';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
 import { Logo } from './Logo';
 
@@ -21,7 +22,7 @@ const theme = extendTheme({ colors })
 
 export default function App() {
   //TODO figure out DB connection and stuff
-  const [logged, setLogged] = useState(false);
+  const [logged, setLogged] = useState(false); //!
   let routes = ['/'];
 
   logged ?
@@ -31,27 +32,47 @@ export default function App() {
   let routeComponents = routes.map((route, key) => {
     if (!logged) {
       return <Route path={route.toLowerCase()}
-        element={<Login logged={logged} setLogged={setLogged} links={routes} />}
+        element={<Login logged={logged} setLogged={setLogged} routes={routes} />}
         key={key} />
     }
+
+    return <Route path={route.toLowerCase()}
+      element={<MainRouting view={route.toLowerCase()} logged={logged} setLogged={setLogged} routes={routes} />} />
   })
 
   return (
     <ChakraProvider theme={theme}>
       {/* TODO Create routes for each link */}
-      <Login routes={routes}/>
+      <Routes>
+        {routeComponents}
+      </Routes>
     </ChakraProvider>
   );
 }
 
 //* Main component
 //-> Used for routing to the other views
-function MainRouting() {
-  // TODO Workout routing in main
-  //? no styles in here, just routing
-  return (
-    <main>
+function MainRouting({ view, logged, setLogged, routes }) {
+  const createView = (viewType) => {
+    switch (viewType) {
+      case "/": return null
+      case "anuncios": return null
+      case "pagos": return null
+      case "directorio": return null
+      case "contacto": return null
+      default: return <h1>La ruta no existe :c</h1>
+    }
+  }
+  const component = createView(view);
 
-    </main>
+
+  return (
+    <React.Fragment>
+      <Navbar logged={logged} setLogged={setLogged} links={routes} />
+
+      <main>
+        {component}
+      </main>
+    </React.Fragment>
   );
 }

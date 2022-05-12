@@ -4,8 +4,6 @@ import {
     Heading,
     Text,
     Link,
-    List,
-    ListItem,
     FormControl,
     FormLabel,
     Input,

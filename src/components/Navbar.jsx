@@ -17,7 +17,7 @@ export default function Navbar({ links }) {
                 <Link as={RouteLink} to="#">House's Community</Link>
 
                 <List display="flex" alignItems="center" justifyContent="space-between" gap="1rem">
-                    {links.map((link, index) => <Navlink page={link} key={index} />)}
+                    {links.map((link, key) => <Navlink page={link} key={key} />)}
                     <Outlet />
                 </List>
             </Box>
