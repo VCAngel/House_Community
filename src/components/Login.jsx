@@ -21,7 +21,7 @@ export default function Login({ logged, setLogged, routes }) {
         <Box display="flex" flexDirection="column" h="100vh" bgImage={`url(${bgImage})`} bgPosition="center" bgRepeat="no-repeat">
             <Navbar links={routes}/>
 
-            <Box display="flex" flex={1} alignItems="center" justifyContent="center">
+            <Box as="section" display="flex" flex={1} alignItems="center" justifyContent="center">
                 <Box display="grid" w="100%" gridTemplateColumns="repeat(2,1fr)">
                     <Heading m="auto auto" w="50%" size="2xl" overflowWrap="normal" whiteSpace="normal">House's Community</Heading>
                     <Box marginY={0} marginX="auto" p="2rem 3rem" bgColor="white" border="1px solid gray" borderRadius="2%">

@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import {
+  Box,
   ChakraProvider,
   extendTheme,
 } from '@chakra-ui/react';
 import Login from './components/Login';
 import Navbar from './components/Navbar';
+import Contact from './components/Contact';
 import NotFound from './components/NotFound';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
 import { Logo } from './Logo';
@@ -43,10 +45,9 @@ export default function App() {
 
   return (
     <ChakraProvider theme={theme}>
-      {/* TODO Create routes for each link */}
       <Routes>
         {routeComponents}
-        <Route path="*" element={<NotFound/>}/> 
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </ChakraProvider>
   );
@@ -60,7 +61,7 @@ function MainRouting({ view, logged, setLogged, routes }) {
       case "anuncios": return null
       case "pagos": return null
       case "directorio": return null
-      case "contacto": return null
+      case "contacto": return <Contact />
       default: return null
     }
   }
@@ -69,11 +70,10 @@ function MainRouting({ view, logged, setLogged, routes }) {
 
   return (
     <React.Fragment>
-      <Navbar logged={logged} setLogged={setLogged} links={routes} />
-
-      <main>
+      <Box display="flex" flexDirection="column" h="100vh">
+        <Navbar logged={logged} setLogged={setLogged} links={routes} />
         {component}
-      </main>
+      </Box>
     </React.Fragment>
   );
 }
