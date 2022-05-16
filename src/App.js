@@ -7,6 +7,7 @@ import {
 } from '@chakra-ui/react';
 import Login from './components/Login';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import Directorio from './components/Directorio';
 import Contact from './components/Contact';
 import NotFound from './components/NotFound';
@@ -74,6 +75,7 @@ function MainRouting({ view, logged, setLogged, routes }) {
       <Box display="flex" flexDirection="column" h="100vh">
         <Navbar logged={logged} setLogged={setLogged} links={routes} />
         {component}
+        {/* TODO <Footer/> */}
       </Box>
     </React.Fragment>
   );

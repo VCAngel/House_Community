@@ -12,7 +12,7 @@ export default function Navbar({ logged, setLogged, links }) {
         links.shift();
 
     return (
-        <Box as="header" mt="1.2rem" mb="1.2rem" display="flex" alignItems="center" justifyContent="space-around">
+        <Box as="header" pt="1.2rem" pb="1.2rem" display="flex" alignItems="center" justifyContent="space-around">
             <Link as={RouteLink} to="/anuncios">House's Community</Link>
 
             <List display="flex" alignItems="center" justifyContent="space-between" gap="1rem">
