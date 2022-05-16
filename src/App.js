@@ -7,6 +7,7 @@ import {
 } from '@chakra-ui/react';
 import Login from './components/Login';
 import Navbar from './components/Navbar';
+import Directorio from './components/Directorio';
 import Contact from './components/Contact';
 import NotFound from './components/NotFound';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
@@ -60,7 +61,7 @@ function MainRouting({ view, logged, setLogged, routes }) {
     switch (viewType) {
       case "anuncios": return null
       case "pagos": return null
-      case "directorio": return null
+      case "directorio": return <Directorio />
       case "contacto": return <Contact />
       default: return null
     }
