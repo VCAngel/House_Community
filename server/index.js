@@ -44,7 +44,7 @@ app.get('/api/adverts', (req, res) => {
     let query = `SELECT * FROM house_community.Anuncios`;
     connection.query(query, (err, rows, fields) => {
         if (err) res.send('Failed');
-        
+
         res.send(rows);
     });
 })
@@ -66,5 +66,54 @@ app.get('/api/residents', (req, res) => {
         res.send(rows);
     });
 })
-    
+
 //!POST Functions
+app.post('/api/users', (req, res) => {
+    let query = `INSERT INTO house_community.Usuarios (Email, Password, NumeroTel) VALUE (?,?,?)`;
+
+    let values = [
+        req.body['Email'],
+        req.body['Password'],
+        req.body['NumeroTel'],
+    ]
+
+    connection.query(query, values, (err, rows, fields) => {
+        if (err) res.send('Failed');
+
+        res.json(`Added Successfully`);
+    })
+})
+
+//!PUT Functios
+app.put('/api/users', (req, res) => {
+    let query = `INSERT INTO house_community.Usuarios (Email, Password, NumeroTel) VALUE (?,?,?)`;
+
+    let values = [
+        req.body['Email'],
+        req.body['Password'],
+        req.body['NumeroTel'],
+    ]
+
+    connection.query(query, values, (err, rows, fields) => {
+        if (err) res.send('Failed');
+
+        res.json(`Added Successfully`);
+    })
+})
+
+//!DELETE Functions
+app.delete('/api/users', (req, res) => {
+    let query = `INSERT INTO house_community.Usuarios (Email, Password, NumeroTel) VALUE (?,?,?)`;
+
+    let values = [
+        req.body['Email'],
+        req.body['Password'],
+        req.body['NumeroTel'],
+    ]
+
+    connection.query(query, values, (err, rows, fields) => {
+        if (err) res.send('Failed');
+
+        res.json(`Added Successfully`);
+    })
+})
