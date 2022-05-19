@@ -23,7 +23,9 @@ export default class Directorio extends Component {
     }
 
     fetchData = (data) => {
-        console.log("fetching")
+        fetch('/')
+            .then(res => console.warn(res))
+            .catch(err => console.error(err))
     }
 
     render() {
